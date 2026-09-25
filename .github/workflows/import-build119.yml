@@ -31,11 +31,28 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat .source-upload/chunk-*.b64 | base64 --decode > /tmp/build119_source.tar.xz
-          echo "26fdcdf72333788fd28a33202a138c9f3c32890ee0f5937294fa7134ae977c00  /tmp/build119_source.tar.xz" | sha256sum -c -
+          cat .source-upload/src-*.b64 | base64 --decode > /tmp/build119_source.tar.xz
+          echo "c2c573499d017461cce365939e1236bf26e4a53bae99fafcadc6621ee20e5b5f  /tmp/build119_source.tar.xz" | sha256sum -c -
           tar -xJf /tmp/build119_source.tar.xz -C .
+
+          cat .source-upload/icon-*.b64 | base64 --decode > /tmp/app_icon.png
+          echo "ad4943ae58c7b728ce6c6a8163a20c6bac04ade470dd8b2e3fa4c290fe26c737  /tmp/app_icon.png" | sha256sum -c -
+          mkdir -p app/src/main/assets app/src/main/res/drawable-nodpi
+          cp /tmp/app_icon.png app/src/main/assets/app_icon.png
+          cp /tmp/app_icon.png app/src/main/res/drawable-nodpi/app_icon.png
+
           rm -rf .source-upload
           rm -f .github/workflows/import-build119.yml
+
+      - name: Verify public tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -d signing
+          ! find . -type f \( -name '*.p12' -o -name '*.pfx' -o -name '*.jks' -o -name '*.keystore' -o -name 'keystore.properties' -o -name '*.apk' -o -name '*.aab' \) | grep -q .
+          grep -q 'versionCode 119' app/build.gradle
+          grep -q 'versionName "3.6.9"' app/build.gradle
+          test -f app/src/main/assets/global_shortage_v369.js
 
       - name: Commit imported source
         shell: bash
