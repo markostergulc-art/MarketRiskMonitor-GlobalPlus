@@ -1,0 +1,30 @@
+# Android / Gradle
+.gradle/
+**/build/
+local.properties
+*.apk
+*.aab
+*.dex
+
+# Release signing material - NEVER COMMIT
+signing/
+*.p12
+*.pfx
+*.jks
+*.keystore
+keystore.properties
+
+# Secrets / local configuration
+.env
+.env.*
+*.secrets
+
+# IDE / OS
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
