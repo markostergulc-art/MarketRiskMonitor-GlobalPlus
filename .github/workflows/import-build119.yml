@@ -1,0 +1,52 @@
+name: Import BUILD119 source
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.source-upload/READY'
+      - '.github/workflows/import-build119.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Skip until all chunks are uploaded
+        shell: bash
+        run: |
+          if [ ! -f .source-upload/READY ]; then
+            echo "Upload not complete yet."
+            exit 0
+          fi
+
+      - name: Reconstruct and import BUILD119 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .source-upload/chunk-*.b64 | base64 --decode > /tmp/build119_source.tar.xz
+          echo "26fdcdf72333788fd28a33202a138c9f3c32890ee0f5937294fa7134ae977c00  /tmp/build119_source.tar.xz" | sha256sum -c -
+          tar -xJf /tmp/build119_source.tar.xz -C .
+          rm -rf .source-upload
+          rm -f .github/workflows/import-build119.yml
+
+      - name: Commit imported source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ChatGPT Build Import"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Release v3.6.9 BUILD119 - Global Shortage Early Warning"
+          git push origin HEAD:main
