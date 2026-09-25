@@ -31,11 +31,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat .source-upload/src-*.b64 | base64 --decode > /tmp/build119_source.tar.xz
+          cat .source-upload/src-*.bin > /tmp/build119_source.tar.xz
           echo "c2c573499d017461cce365939e1236bf26e4a53bae99fafcadc6621ee20e5b5f  /tmp/build119_source.tar.xz" | sha256sum -c -
           tar -xJf /tmp/build119_source.tar.xz -C .
 
-          cat .source-upload/icon-*.b64 | base64 --decode > /tmp/app_icon.png
+          cat .source-upload/icon-*.bin > /tmp/app_icon.png
           echo "ad4943ae58c7b728ce6c6a8163a20c6bac04ade470dd8b2e3fa4c290fe26c737  /tmp/app_icon.png" | sha256sum -c -
           mkdir -p app/src/main/assets app/src/main/res/drawable-nodpi
           cp /tmp/app_icon.png app/src/main/assets/app_icon.png
