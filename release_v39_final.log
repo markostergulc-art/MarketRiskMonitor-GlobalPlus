@@ -1,0 +1,238 @@
+PASS F10 shared reference preserved
+PASS F10 true cycle contained
+PASS F05 invalid CROBEX date rejected
+PASS F05 Croatian D.M.Y date accepted
+PASS F05 empty ZSE number remains missing
+PASS F05 EU decimal format parsed
+PASS F05 ISO decimal parsed without x1000 heuristic
+PASS F05 invalid date cannot win latest-date sort
+PASS F05 validation null does not become zero
+PASS F05 rotation null does not become zero
+PASS F05 legitimate zero survives normalization
+PASS F06 future observation rejected
+PASS F06 unverified ancient annual observation rejected
+PASS F06 verified latest annual release can remain eligible
+PASS F06 stale factor excluded from aggregate
+PASS F05/F06 undated commodity is not live
+PASS F03 empty bond curve N/A
+PASS F03 one-slope bond curve PARTIAL
+PASS F03 empty bond regime N/A
+PASS F02 ancient in-memory stale cache expires
+PASS F02 allowable cache preserves source timestamp
+PASS F01 old energy history not eligible as current quote
+PASS F01 refresh failure disclosed with retained history
+PASS F07 mismatched EU gas scope rejected
+PASS F07 compatible paired EU scope computes 73 days
+PASS F08 one dividend cannot produce GOOD/HIGH
+PASS F08 missing T212 fundamentals create no adverse claim
+PASS F04 old shortage observation not scored
+PASS F04 expired shortage cache not scored
+PASS F12 decimal 19.5 is NORMAL
+PASS F12 20.0 begins WATCH
+PASS F04 empty shortage remains N/A/null
+PASS F09 commodity export uses metric-level physical paths
+PASS F09 export does not synthesize retrievedAt at export time
+PASS F11 GA2 export separates legacy rows
+PASS F11 fiscal structural description matches GA2 architecture
+PASS F13 release identity is 3.9 / 122
+PASS F13 package id unchanged
+RESULT 38/38 passed
+PASS score delta exact
+PASS GA2 accounting reconciles displayed delta
+PASS market move classified
+PASS evidence preserves provider
+PASS evidence preserves observation
+PASS evidence separates empirical validation
+PASS source loss classified
+PASS source loss is non-market
+PASS revision same period classified
+PASS same-value new observation classified as release/move
+PASS source loss emits DATA_HEALTH
+PASS source loss does not emit MARKET_RISK
+PASS source recovery emits DATA_HEALTH
+PASS source recovery not a market shock
+PASS comparable significant delta emits market alert
+PASS watch target added
+PASS market watch requires and completes two-observation confirmation
+RESULT 17/17 PASS
+PASS release identity 3.9/122
+PASS DB schema v4
+PASS DB table calculation_snapshot
+PASS DB table observation_revision
+PASS DB table change_event
+PASS DB table alert_rule
+PASS DB table alert_event
+PASS upgrade is additive v4 gate
+PASS typed market/data notification channels
+PASS native calculation snapshot bridge
+PASS native change/alert bridge
+PASS background explicitly prefetch only
+PASS background endpoint diagnostics
+PASS worker does not reference GA2 calculation
+RESULT 14/14 PASS
+PASS: module exports
+PASS: score 0 normal
+PASS: score 19 normal
+PASS: score 20 watch
+PASS: score 40 tight
+PASS: score 60 shortage
+PASS: score 80 critical
+PASS: missing score N/A
+PASS: weight normalization ignores missing
+PASS: all missing stays null
+RESULT: 10/10 passed
+PASS 37/37 daily Capital Rotation tests
+PASS Yahoo class-share normalization
+PASS Yahoo ordinary ticker unchanged
+PASS Broad rally valid count
+PASS Broad rally positive breadth 100%
+PASS Broad rally outperform-SPY 100%
+PASS Broad rally positive weight 100%
+PASS Broad rally weighted coverage 100%
+PASS Broad rally classified BROAD
+PASS Contribution uses ETF weight
+PASS Top positive contributor sorted
+PASS Narrow move detects mega-cap domination
+PASS Narrow move breadth concentrated
+PASS Mega contributor has largest contribution
+PASS Negative contributors present
+PASS Missing large constituent weighted coverage 20%
+PASS Missing large constituent confidence LOW
+PASS All weights valid coverage 100%
+PASS Small universe confidence not falsely HIGH
+PASS Stale holdings force LOW confidence
+PASS 10 constituents high coverage can be HIGH confidence
+PASS Sector relative excess calculation
+PASS SPY relative excess calculation
+PASS Positive sector + positive drivers confirms
+PASS Three usable drivers confidence HIGH
+PASS Positive sector + negative drivers diverges
+PASS Negative sector + negative drivers confirms
+PASS No drivers status N/A
+PASS No drivers low confidence
+PASS Energy has WTI driver
+PASS Energy has Brent driver
+PASS Energy has natural gas driver
+PASS Materials has copper driver
+PASS Technology has semiconductor driver
+PASS Financials has regional bank/credit confirmation
+PASS XLSX parser reads six holdings
+PASS XLSX parser extracts as-of date
+PASS XLSX parser normalizes decimal weight to percent
+PASS XLSX parser normalizes BRK.B Yahoo symbol
+PASS XLSX parser skips non-data/header rows
+RESULT 39/39 passed
+PASS Technology appears once
+PASS Financials appears once
+PASS Energy appears once
+PASS Industrials appears once
+PASS Healthcare appears once
+PASS Utilities appears once
+PASS Consumer Discretionary appears once
+PASS Consumer Staples appears once
+PASS Communication Services appears once
+PASS Materials appears once
+PASS Real Estate appears once
+PASS One details card per sector
+PASS Contributor placeholder inside same sector
+PASS No strongest-signal duplicate section
+PASS No separate sector-details duplicate section
+PASS No legacy representative-groups section
+PASS Tap details message present
+RESULT 17/17 passed
+PASS v007-direct DIRECT_ARRAY 1 1 https://agsi.gie.eu/api?country=AT&company=21X000000001160J&facility=21W000000000078N
+PASS data-wrapper DATA_ARRAY 1 1 https://agsi.gie.eu/api?country=AT&company=21X000000001160J&facility=21W000000000078N
+PASS result-wrapper RESULT_ARRAY 1 1 https://agsi.gie.eu/api?country=AT&company=21X000000001160J&facility=21W000000000078N
+PASS v005-hierarchical OBJECT 1 1 https://agsi.gie.eu/api?country=AT&company=21X000000001160J&facility=21W000000000078N
+PASS empty diagnostic No EU AGSI facility datasets found in listing (shape=DATA_ARRAY, operators=0, facilityNodes=0, topKeys=data)
+PASS - Probe schema discovers official unit
+PASS - Probe schema discovers total product
+PASS - Probe schema discovers emergency flow
+PASS - Probe schema discovers commercial flow
+PASS - Repeated Eurostat filters preserved
+PASS - EU aggregate built from country observations, not fake EU27 geo
+PASS - EU aggregate coverage always explicit
+PASS - Missing country remains missing / no zero fabrication
+PASS - Insufficient coverage fails closed
+PASS - OEM minimum stock quantity aggregates country data
+PASS - OEM missing minimum quantity fails closed
+PASS - OEM country days preserves 90-day net-import method
+PASS - OEM country days preserves 61-day inland-consumption method
+PASS - OEM daily denominators are not misread as cover days
+PASS - Unknown/renamed emergency flow fails closed
+PASS - HTTP error classification
+PASS - CORS/network error classification
+PASS - Timeout classification
+PASS - FAO official CSV parser current fixture
+PASS - FAO HTML-as-CSV fails closed
+PASS - FAO renamed column fails closed
+PASS - FAO missing field does not become zero
+RESULT: 22/22 PASS
+PASS - EU discovery includes DE/FR
+PASS - non-EU GB/UA excluded
+PASS - normal country stock
+PASS - normal country WGV
+PASS - normal official fill retained
+PASS - free capacity calculated
+PASS - valid progress eligible
+PASS - missing full computed from stock/WGV
+PASS - missing WGV preserved as null
+PASS - missing WGV has no progress bar
+PASS - >100 raw fill not silently clamped
+PASS - >100 remains progress input for anomaly renderer
+PASS - duplicate date prefers confirmed status
+PASS - observation date retained
+PASS - bounded country concurrency = 4
+PASS - country worker isolates failures
+PASS - country cache TTL = 6h
+PASS - overview lazy integration
+PASS - shared progress renderer used
+PASS - no hardcoded current country capacity values
+PASS - summary totals use complete WGV/stock pairs only
+RESULT 21/21 PASS
+PASS - AGSI annual consumption parsed
+PASS - AGSI consumptionFull parsed
+PASS - coverage days arithmetic
+PASS - missing consumptionFull computed from stock/consumption
+PASS - zero consumption does not divide by zero
+PASS - missing consumption remains missing
+PASS - card displays annual demand coverage only when consumption exists
+PASS - coverage uses no new progress bar
+PASS - coverage semantic note present
+PASS - AGSI country request architecture unchanged
+RESULT 10/10 PASS
+13/13 PASS
+T212 Portfolio v3.6.3 tests: 37/37 PASS
+PASS uses Trading 212 tradable-instruments catalog
+PASS does not use Trading 212 positions endpoint
+PASS old portfolio-position semantics removed from runtime
+PASS Croatian tradability labels present
+PASS English tradability labels present
+PASS distinct availability classes present
+PASS S&P 500 rows include availability badge
+PASS country/industry stock rows include availability badge
+PASS stock detail includes availability badge
+PASS ETF rows include availability badge
+PASS ETF detail/loading/error paths include availability badge
+PASS Capital Rotation equity representatives include badge
+PASS Capital Rotation ETF proxies include badge
+PASS global startup restores credentials then loads availability catalog when configured
+PASS release export identity is 3.9 / 122
+PASS instrument parser accepts catalog rows
+PASS ticker normalization matches US/EU/JP/ETF/class-share and T212 European-listing suffix forms
+PASS missing ticker is correctly not available after catalog load
+RESULT 18/18
+PASS Excel button exists
+PASS Excel asset included
+PASS XLSX mime declared
+PASS 25 sheet specs declared
+PASS zero fetch calls in exporter
+PASS native save bridge reused
+PASS report version 3.9/122
+PASS JS syntax
+PASS runtime OOXML generation
+PASS XLSX ZIP integrity
+PASS XLSX contains 25 worksheets
+PASS OOXML parts are well-formed XML
+RESULT 12/12 PASS
+PASS canonical app.js is byte/text-identical to embedded runtime block and v3.9 assets are linked

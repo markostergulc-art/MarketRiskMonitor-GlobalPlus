@@ -1,0 +1,259 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "sanitized Eurostat fixture",
+  "id": [
+    "freq",
+    "stk_flow",
+    "unit",
+    "geo",
+    "time"
+  ],
+  "size": [
+    1,
+    5,
+    2,
+    4,
+    2
+  ],
+  "dimension": {
+    "freq": {
+      "label": "freq",
+      "category": {
+        "index": {
+          "M": 0
+        },
+        "label": {
+          "M": "Monthly"
+        }
+      }
+    },
+    "stk_flow": {
+      "label": "stk_flow",
+      "category": {
+        "index": {
+          "MIN_STK": 0,
+          "STK_NI_D": 1,
+          "STK_IC_D": 2,
+          "NI_DC": 3,
+          "IC_DC": 4
+        },
+        "label": {
+          "MIN_STK": "Minimum stocklevel for compliance - calculated",
+          "STK_NI_D": "Emergency oil stocks in days equivalent - net imports",
+          "STK_IC_D": "Emergency oil stocks in days equivalent - inland consumption",
+          "NI_DC": "Daily net imports for compliance",
+          "IC_DC": "Daily inland consumption for compliance"
+        }
+      }
+    },
+    "unit": {
+      "label": "unit",
+      "category": {
+        "index": {
+          "THS_T": 0,
+          "NR": 1
+        },
+        "label": {
+          "THS_T": "Thousand tonnes",
+          "NR": "Number"
+        }
+      }
+    },
+    "geo": {
+      "label": "geo",
+      "category": {
+        "index": {
+          "AT": 0,
+          "DE": 1,
+          "FR": 2,
+          "AL": 3
+        },
+        "label": {
+          "AT": "Austria",
+          "DE": "Germany",
+          "FR": "France",
+          "AL": "Albania"
+        }
+      }
+    },
+    "time": {
+      "label": "time",
+      "category": {
+        "index": {
+          "2026-05": 0,
+          "2026-06": 1
+        },
+        "label": {
+          "2026-05": "2026-05",
+          "2026-06": "2026-06"
+        }
+      }
+    }
+  },
+  "value": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    95,
+    null,
+    92,
+    null,
+    null,
+    null,
+    100,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    64,
+    null,
+    null,
+    null,
+    null,
+    28.5,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    31.2,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "updated": "2026-09-13T10:00:00Z",
+  "status": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "p",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}

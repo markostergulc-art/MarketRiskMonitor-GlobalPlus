@@ -1,0 +1,47 @@
+{
+  "last_page": 1,
+  "total": 3,
+  "dataset": "EU",
+  "gas_day": "2026-09-12",
+  "data": [
+    {
+      "name": "EU",
+      "code": "eu",
+      "gasDayStart": "2026-09-10",
+      "gasInStorage": "896.5000",
+      "injection": "2380.00",
+      "netWithdrawal": "1210.00",
+      "withdrawal": "1170.00",
+      "workingGasVolume": "1150.0000",
+      "status": "C",
+      "trend": "0.1052",
+      "full": "77.96"
+    },
+    {
+      "name": "EU",
+      "code": "eu",
+      "gasDayStart": "2026-09-11",
+      "gasInStorage": "897.7000",
+      "injection": "2310.00",
+      "netWithdrawal": "1110.00",
+      "withdrawal": "1200.00",
+      "workingGasVolume": "1150.0000",
+      "status": "C",
+      "trend": "0.1043",
+      "full": "78.06"
+    },
+    {
+      "name": "EU",
+      "code": "eu",
+      "gasDayStart": "2026-09-12",
+      "gasInStorage": "899.0000",
+      "injection": "2450.00",
+      "netWithdrawal": "1150.00",
+      "withdrawal": "1300.00",
+      "workingGasVolume": "1150.0000",
+      "status": "C",
+      "trend": "0.1130",
+      "full": "78.17"
+    }
+  ]
+}

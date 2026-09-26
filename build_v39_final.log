@@ -1,0 +1,17 @@
+unsigned /mnt/data/mrm_next/manual_apk_build_v39/MarketRiskMonitor_GlobalPlus_v3.9_unsigned.apk 1011600 dex 3688 arsc 572 manifest 1424 methods 41 fields 1
+aligned /mnt/data/mrm_next/manual_apk_build_v39/MarketRiskMonitor_GlobalPlus_v3.9_unsigned_aligned.apk 1011614
+jar signed.
+
+Warning: 
+The signer's certificate is self-signed.
+POSIX file permission and/or symlink attributes detected. These attributes are ignored when signing and are not protected by the signature.
+manual_apk_build_v39/MarketRiskMonitor_GlobalPlus_v3.9_v1_aligned.apk
+digest 1ad7552a440ae89c0ec2f30fc29b9b356d0d52286f0026e614bb2ee78a3ba790
+cert_sha256 c17fdf8d2fc50db4bf77577fb3d6d9d9105e00f2b5952df362f7c27cad8a16b6
+block_bytes 4122
+V2 (True, 'c17fdf8d2fc50db4bf77577fb3d6d9d9105e00f2b5952df362f7c27cad8a16b6')
+V3 (True, 'c17fdf8d2fc50db4bf77577fb3d6d9d9105e00f2b5952df362f7c27cad8a16b6')
+content_digest 1ad7552a440ae89c0ec2f30fc29b9b356d0d52286f0026e614bb2ee78a3ba790
+zip_integrity PASS
+PASS ZIP integrity and 4-byte alignment for 2 STORED entries
+PASS: MarketRiskMonitor_GlobalPlus_v3.9_BUILD122_signed.apk

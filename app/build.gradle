@@ -1,0 +1,50 @@
+plugins { id 'com.android.application' }
+
+def releaseSigningProps = new Properties()
+def releaseSigningPropsFile = rootProject.file('signing/keystore.properties')
+if (releaseSigningPropsFile.exists()) {
+    releaseSigningPropsFile.withInputStream { releaseSigningProps.load(it) }
+}
+
+android {
+    namespace 'com.marko.marketrisk.globalplus'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.marko.marketrisk.globalplus'
+        minSdk 26
+        targetSdk 35
+        versionCode 127
+        versionName '2026.09.26.4'
+    }
+
+    signingConfigs {
+        release {
+            if (releaseSigningPropsFile.exists()) {
+                storeFile rootProject.file('signing/' + releaseSigningProps['storeFile'])
+                storePassword releaseSigningProps['storePassword']
+                keyAlias releaseSigningProps['keyAlias']
+                keyPassword releaseSigningProps['keyPassword']
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            if (releaseSigningPropsFile.exists()) {
+                signingConfig signingConfigs.release
+            }
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+
+dependencies {
+    implementation 'androidx.work:work-runtime:2.11.2'
+}

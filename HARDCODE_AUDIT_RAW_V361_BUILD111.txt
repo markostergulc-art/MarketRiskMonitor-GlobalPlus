@@ -1,0 +1,44 @@
+PASS: banned runtime token absent: COMMODITY_FALLBACK
+PASS: banned runtime token absent: date:'2026-08-28'
+PASS: banned runtime token absent: date:'2026-08-20'
+PASS: banned runtime token absent: sourceDate:'2026-09-03'
+PASS: banned runtime token absent: q2SourceDate:'2026-07-30'
+PASS: banned runtime token absent: commercialCrude:424.460
+PASS: banned runtime token absent: spr:286.604
+PASS: banned runtime token absent: totalCrude:711.064
+PASS: banned runtime token absent: gasoline:205.669
+PASS: banned runtime token absent: distillate:104.187
+PASS: banned runtime token absent: daysSupply:24.4
+PASS: banned runtime token absent: siteInventory:294.1
+PASS: banned runtime token absent: q2NetT:288.9
+PASS: banned runtime token absent: WGC_CB_MONTHLY
+PASS: banned runtime token absent: WGC_CB_Q2
+PASS: banned runtime token absent: FISCAL_V44_IMF_VINTAGE='WEO-2026-04'
+PASS: banned runtime token absent: rankMode:'issuer'
+PASS: fixed DOE Total-row observation regex absent
+PASS: commodity embedded numeric fallback absent
+PASS: WGC source discovery uses rolling archive
+PASS: WGC quarter discovery uses current landing/candidates
+PASS: DOE capacity/inventory parse dynamically
+PASS: commodity unavailable is N/A, not embedded observation
+PASS: Capital Rotation uses dynamic market-cap ranking
+PASS: Capital Rotation does not restore missing candidates by static order
+PASS: IMF metadata does not claim fixed WEO vintage
+PASS: export metadata versionCode is build 111
+PASS: no unexpected dated current-result literals in app.js
+PASS: native code excludes embedded observation 424.460
+PASS: native code excludes embedded observation 286.604
+PASS: native code excludes embedded observation 711.064
+PASS: native code excludes embedded observation 205.669
+PASS: native code excludes embedded observation 104.187
+PASS: native code excludes embedded observation 294.1
+PASS: native code excludes embedded observation 288.9
+PASS: native code excludes embedded observation 2026-08-28
+PASS: native code excludes embedded observation 2026-08-20
+PASS: native code excludes embedded observation 2026-09-03
+PASS: no historical HTML snapshots in production assets
+PASS: packaged runtime embeds canonical app.js
+PASS: methodology weights remain explicit configuration
+PASS: market/security universes remain explicit metadata
+PASS: historical validation event windows remain explicit methodology
+RESULT 43/43 PASS

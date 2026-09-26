@@ -1,0 +1,18 @@
+'use strict';
+const fs=require('fs'),vm=require('vm');
+const src=fs.readFileSync('app/src/main/assets/global_shortage_v369.js','utf8');
+const context={window:{},document:{getElementById:()=>null,addEventListener:()=>{},head:{appendChild:()=>{}},createElement:()=>({})},localStorage:{getItem:()=>null,setItem:()=>{}},console,Date,Math,Number,JSON,String,Promise,Set,Map,Array,Object};
+context.window.window=context.window;vm.createContext(context);vm.runInContext(src,context);
+const m=context.window.GlobalShortageV369;let tests=[];const t=(n,c)=>tests.push([n,!!c]);
+t('module exports',!!m);
+t('score 0 normal',m.statusForScore(0)==='NORMAL');
+t('score 19 normal',m.statusForScore(19)==='NORMAL');
+t('score 20 watch',m.statusForScore(20)==='WATCH');
+t('score 40 tight',m.statusForScore(40)==='TIGHT');
+t('score 60 shortage',m.statusForScore(60)==='SHORTAGE');
+t('score 80 critical',m.statusForScore(80)==='CRITICAL');
+t('missing score N/A',m.statusForScore(null)==='N/A');
+t('weight normalization ignores missing',Math.abs(m.weightedScore([{risk:20,weight:1},{risk:null,weight:4},{risk:80,weight:1}])-50)<1e-9);
+t('all missing stays null',m.weightedScore([{risk:null,weight:1}])===null);
+for(const [n,c] of tests)console.log((c?'PASS':'FAIL')+': '+n);
+const fail=tests.filter(x=>!x[1]);console.log(`RESULT: ${tests.length-fail.length}/${tests.length} passed`);process.exit(fail.length?1:0);

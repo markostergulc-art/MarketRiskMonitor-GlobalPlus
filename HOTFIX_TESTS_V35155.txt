@@ -1,0 +1,33 @@
+PASS - versionCode 88
+PASS - versionName 3.5.1.55
+PASS - visible header v3.5.1_55
+PASS - release metadata v3.5.1.55 / 88
+PASS - export metadata v3.5.1.55 / 88
+PASS - embedded app.js byte-identical
+PASS - v54 baseline reproduces missing hiddenRiskAnomaly definition
+PASS - hiddenRiskAnomaly restored
+PASS - anomalyFamily dependency restored
+PASS - restored hidden-risk implementation is byte-identical to last known-good baseline
+PASS - restored anomaly-family mapping is byte-identical to last known-good baseline
+PASS - optional hidden-risk diagnostic cannot abort refresh
+PASS - diagnostic failure guard present
+PASS - separate confidence/coverage metadata slot present
+PASS - GLOBAL regime has compact heading style
+PASS - confidence/coverage rendered as secondary metadata
+PASS - GLOBAL H2 contains regime only
+PASS - GLOBAL confidence/coverage written to separate element
+PASS - old giant H2 content removed
+PASS - fixed top status stage retained
+PASS - desktop status slot height retained
+PASS - status cards continue to overlay, not stack
+PASS - methodology unchanged: globalRiskModel
+PASS - methodology unchanged: factorRecordV53
+PASS - methodology unchanged: globalFactorArchitectureV53
+PASS - methodology unchanged: countryCoverageV50
+PASS - methodology unchanged: confidenceCompositeV51
+PASS - methodology unchanged: earlyWarningLayersV52
+PASS - no additional raw fetch call sites
+PASS - native source user-agent version updated
+PASS - no obvious embedded API secret
+PASS - restored hidden-risk diagnostic executes on deterministic fixture
+RESULT - 32/32 v3.5.1.55 corrective hotfix checks PASS

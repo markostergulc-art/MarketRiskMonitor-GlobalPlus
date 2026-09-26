@@ -1,0 +1,21 @@
+'use strict';
+const fs=require('fs'),crypto=require('crypto'),path=require('path');
+const root=path.join(__dirname,'..'),src=fs.readFileSync(path.join(root,'app.js'),'utf8'),base=fs.readFileSync(path.join(root,'app_v35150_baseline.js'),'utf8'),html=fs.readFileSync(path.join(root,'app/src/main/assets/index.html'),'utf8'),gradle=fs.readFileSync(path.join(root,'app/build.gradle'),'utf8');
+let p=0,f=0;function ok(c,n,d=''){if(c){console.log('PASS - '+n);p++}else{console.error('FAIL - '+n+(d?' :: '+d:''));f++}}
+function sha(x){return crypto.createHash('sha256').update(x||'').digest('hex')}
+function extractFunction(text,name){let i=text.indexOf('function '+name+'(');if(i<0)return null;let b=text.indexOf('{',i),d=0,sq=false,dq=false,tq=false,esc=false,line=false,block=false;for(let j=b;j<text.length;j++){let c=text[j],n=text[j+1];if(line){if(c==='\n')line=false;continue}if(block){if(c==='*'&&n==='/'){block=false;j++}continue}if(sq||dq||tq){if(esc){esc=false;continue}if(c==='\\'){esc=true;continue}if((sq&&c==="'")||(dq&&c==='"')||(tq&&c==='`'))sq=dq=tq=false;continue}if(c==='/'&&n==='/'){line=true;j++;continue}if(c==='/'&&n==='*'){block=true;j++;continue}if(c==="'"){sq=true;continue}if(c==='"'){dq=true;continue}if(c==='`'){tq=true;continue}if(c==='{')d++;else if(c==='}'&&--d===0)return text.slice(i,j+1)}return null}
+const protectedFns=['riskBand','weightedScore','globalContagion','marketMetrics','trendRisk','macroRiskFromWB','fxRisk','systemScoreForCountry','corrMatrix','correlationRegimeFromStats','correlationRegimeDiagnostic','weightedAvailable','inflationDetector','recessionLeadingAndComposite','buildMacroCycle','fiscalScoreRowsV43','fiscalFreshnessV44','fiscalPickReferenceV44','commodityShockRisk','buildCommodityIntelligence','equityInternalsRecord','aggregateEquityInternalsV42','sp500HiddenWeakness','companyCoreRiskParts','companyContextRisk','loadPriorityForV44','pumpLoadSchedulerV44','queueLoadV44','scheduleDeferredV44','scheduleAroundPageV44','refreshActiveV44','sparklineSvg','marketCardSparkPeriodV46','fetchWithTimeout','freshnessModelV49','freshnessFieldsV49','annotateMacroCycleFreshnessV49'];
+for(const n of protectedFns){const a=extractFunction(base,n),b=extractFunction(src,n);ok(!!a&&!!b&&a===b,'protected unchanged: '+n,a&&b?sha(a).slice(0,8)+' != '+sha(b).slice(0,8):'missing')}
+ok(/versionCode\s+84\b/.test(gradle),'versionCode 84');ok(/versionName\s+['"]3\.5\.1\.51['"]/.test(gradle),'versionName 3.5.1.51');ok(html.includes('v3.5.1_51'),'visible header v3.5.1_51');
+const marker="<script>'use strict';",si=html.indexOf(marker),se=html.lastIndexOf('</script>'),embedded=si>=0&&se>si?html.slice(si+8,se):'';ok(embedded===src.trimEnd(),'embedded app.js byte-identical');ok(html.indexOf(marker)===html.lastIndexOf(marker),'application script embedded once');
+for(const n of ['countryCoverageV50','globalRiskModel','finalizeCountries','rehydrateCached','marketAuditRowsV47','globalRiskAuditRowsV47'])ok(!!extractFunction(src,n),'Phase-2 function present: '+n);
+ok(src.includes("code:'HR'")&&!src.includes("code:'BA'")&&!src.includes('SASX-10'),'Croatia retained and Bosnia absent');
+ok(src.includes('Android.saveExportFile')&&src.includes('saveExportBlobV48'),'native export bridge path retained');
+ok(src.includes('CURRENT')&&src.includes('OLD_BUT_CURRENT_RELEASE')&&src.includes('STALE'),'Phase-1 freshness statuses retained');
+ok(src.includes('COUNTRY_MIN_EFFECTIVE_COVERAGE_V50=50')&&src.includes('COUNTRY_MIN_FACTOR_GROUPS_V50=3'),'Country coverage gate constants');
+ok(src.includes('GLOBAL_MIN_EFFECTIVE_COVERAGE_V50=50')&&src.includes('GLOBAL_MIN_FACTOR_GROUPS_V50=5'),'GLOBAL coverage gate constants');
+ok(src.includes("c.band=c.eligibleV50?riskBand(c.risk):limitedBandV50()"),'normal country color blocked before eligibility');
+ok(src.includes("band=model.eligible?riskBand(globalScore):limitedBandV50()"),'normal GLOBAL color blocked before eligibility');
+ok(src.includes('effectiveWeightedCoverage=Math.min(weightedCoverage,freshnessCoverage)'),'effective country coverage conservative');
+ok(src.includes('effectiveCoverage=Math.min(factorCoverage,dataCoverage,freshnessCoverage,sourceValidityCoverage)'),'effective GLOBAL coverage conservative');
+console.log(`RESULT - ${p}/${p+f} Phase 2 retained in v3.5.1.51 regression checks PASS`);if(f)process.exit(1);

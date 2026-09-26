@@ -1,0 +1,4 @@
+faostat,m49_code,country_name_en,item_code,item,year,yield_kg_ha,yield_kg_ha_flag,production_tonnes,production_tonnes_flag,area_harvested_ha,area_harvested_ha_flag
+2,4,Afghanistan,15,Wheat,2017,2034.2,A,4280776,A,2104377,A
+2,4,Afghanistan,15,Wheat,2024,2200.0,E,5000000,E,2272727,E
+68,191,Croatia,15,Wheat,2024,6000.0,A,900000,A,150000,A

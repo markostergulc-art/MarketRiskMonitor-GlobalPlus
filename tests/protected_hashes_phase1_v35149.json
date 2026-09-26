@@ -1,0 +1,206 @@
+[
+  {
+    "name": "riskBand",
+    "same": true,
+    "base": "c918cd3eb19a7e12223755ab28df66d66d92ecdb7ce38bd9b1ae7d8146a2f473",
+    "new": "c918cd3eb19a7e12223755ab28df66d66d92ecdb7ce38bd9b1ae7d8146a2f473"
+  },
+  {
+    "name": "weightedScore",
+    "same": true,
+    "base": "1f0ff494e764c41992588262117711d35d5c9ed5f8ea25b065bd713832e8faf5",
+    "new": "1f0ff494e764c41992588262117711d35d5c9ed5f8ea25b065bd713832e8faf5"
+  },
+  {
+    "name": "globalRiskModel",
+    "same": true,
+    "base": "1f85098673a8917c55fce92c711cefafeb101ac34e8f5fd85792fba95bf1d012",
+    "new": "1f85098673a8917c55fce92c711cefafeb101ac34e8f5fd85792fba95bf1d012"
+  },
+  {
+    "name": "globalContagion",
+    "same": true,
+    "base": "94e2cdb32b3db02deffef77f461ca26db5acae966824456b9e43a6ca7a72810c",
+    "new": "94e2cdb32b3db02deffef77f461ca26db5acae966824456b9e43a6ca7a72810c"
+  },
+  {
+    "name": "marketMetrics",
+    "same": true,
+    "base": "67efe1e13b1e6d6d07148a48a752f46c87fce0a7f69dc68327de6c63c5c5dc64",
+    "new": "67efe1e13b1e6d6d07148a48a752f46c87fce0a7f69dc68327de6c63c5c5dc64"
+  },
+  {
+    "name": "trendRisk",
+    "same": true,
+    "base": "37caff84f3021b09f26c72ee96546c5ac62aac6b2a1c95f8fd83283a4539ce17",
+    "new": "37caff84f3021b09f26c72ee96546c5ac62aac6b2a1c95f8fd83283a4539ce17"
+  },
+  {
+    "name": "macroRiskFromWB",
+    "same": true,
+    "base": "bf763ce8e9d42c6c23c467de11489f2d3c64e9282d1aa3837f321baf53807750",
+    "new": "bf763ce8e9d42c6c23c467de11489f2d3c64e9282d1aa3837f321baf53807750"
+  },
+  {
+    "name": "fxRisk",
+    "same": true,
+    "base": "f8c3fe9f8ff3e7103acdde203d36b197bf0dafec6e8034e9ed77ddeffc43b236",
+    "new": "f8c3fe9f8ff3e7103acdde203d36b197bf0dafec6e8034e9ed77ddeffc43b236"
+  },
+  {
+    "name": "systemScoreForCountry",
+    "same": true,
+    "base": "8485625f8997bcbfa484efc62b683fffb61b1bb25224a04e713436abf1d7a415",
+    "new": "8485625f8997bcbfa484efc62b683fffb61b1bb25224a04e713436abf1d7a415"
+  },
+  {
+    "name": "corrMatrix",
+    "same": true,
+    "base": "54e37baf28fc6f79a1a24c8311c7da97c730e4d9417db3be2f6d7adf6a31b8c8",
+    "new": "54e37baf28fc6f79a1a24c8311c7da97c730e4d9417db3be2f6d7adf6a31b8c8"
+  },
+  {
+    "name": "correlationRegimeFromStats",
+    "same": true,
+    "base": "90634b1748c3b0fc89a3a888cb70f85caf5770b073a916c0d3272dd0a7862f83",
+    "new": "90634b1748c3b0fc89a3a888cb70f85caf5770b073a916c0d3272dd0a7862f83"
+  },
+  {
+    "name": "correlationRegimeDiagnostic",
+    "same": true,
+    "base": "c6dfe49bcde8efa7521e6f43226ec232084fd62d96be20d3c4367bc39c91f7c7",
+    "new": "c6dfe49bcde8efa7521e6f43226ec232084fd62d96be20d3c4367bc39c91f7c7"
+  },
+  {
+    "name": "weightedAvailable",
+    "same": true,
+    "base": "d166c1e55806878cba8ca8fcf03723eccb3efb63e9c8868fba5b28205281ae51",
+    "new": "d166c1e55806878cba8ca8fcf03723eccb3efb63e9c8868fba5b28205281ae51"
+  },
+  {
+    "name": "inflationDetector",
+    "same": true,
+    "base": "4d2a844692b0c5a97540c783efea1e1156d13e1e591a13de096230fe36750b25",
+    "new": "4d2a844692b0c5a97540c783efea1e1156d13e1e591a13de096230fe36750b25"
+  },
+  {
+    "name": "recessionLeadingAndComposite",
+    "same": true,
+    "base": "ef1bb111afa3c4c5fac1d15ed74722c27d2ce7c2ca70a5b120f2242c496baf0e",
+    "new": "ef1bb111afa3c4c5fac1d15ed74722c27d2ce7c2ca70a5b120f2242c496baf0e"
+  },
+  {
+    "name": "buildMacroCycle",
+    "same": true,
+    "base": "0f7a2900051cd77440556119f86a3eb50b918f166968f6b9367a5da845626ea9",
+    "new": "0f7a2900051cd77440556119f86a3eb50b918f166968f6b9367a5da845626ea9"
+  },
+  {
+    "name": "fiscalScoreRowsV43",
+    "same": true,
+    "base": "e076592e1ae2b82983157c98e26c198ff9b31ac176451e1ad3297d7e76c9e13d",
+    "new": "e076592e1ae2b82983157c98e26c198ff9b31ac176451e1ad3297d7e76c9e13d"
+  },
+  {
+    "name": "fiscalFreshnessV44",
+    "same": true,
+    "base": "d757799f9192b595b4fd3a1346f0ae571c80af42b1a44c53605e3e3773d8644f",
+    "new": "d757799f9192b595b4fd3a1346f0ae571c80af42b1a44c53605e3e3773d8644f"
+  },
+  {
+    "name": "fiscalPickReferenceV44",
+    "same": true,
+    "base": "28cbd88cecb8f6fe1421be223f8b2d44c1e7489161fbb045461d5b057ff90250",
+    "new": "28cbd88cecb8f6fe1421be223f8b2d44c1e7489161fbb045461d5b057ff90250"
+  },
+  {
+    "name": "commodityShockRisk",
+    "same": true,
+    "base": "e4ff25c6faf751ec53ff0887bf157d380a386100fe497fdc71ac151923ad68e6",
+    "new": "e4ff25c6faf751ec53ff0887bf157d380a386100fe497fdc71ac151923ad68e6"
+  },
+  {
+    "name": "buildCommodityIntelligence",
+    "same": true,
+    "base": "f3cfa59a1a18dcc4285263b832eca483c9927a69b0990ebc4541896a04185e64",
+    "new": "f3cfa59a1a18dcc4285263b832eca483c9927a69b0990ebc4541896a04185e64"
+  },
+  {
+    "name": "equityInternalsRecord",
+    "same": true,
+    "base": "2c60f85fc333e606fb74d6d175c420432c1c766a8f3d277524e7de21ebdd4ae7",
+    "new": "2c60f85fc333e606fb74d6d175c420432c1c766a8f3d277524e7de21ebdd4ae7"
+  },
+  {
+    "name": "aggregateEquityInternalsV42",
+    "same": true,
+    "base": "d5ad5deea8977cb49077a378ad0cbd6192b14979042a9a758fa877771663d0c8",
+    "new": "d5ad5deea8977cb49077a378ad0cbd6192b14979042a9a758fa877771663d0c8"
+  },
+  {
+    "name": "sp500HiddenWeakness",
+    "same": true,
+    "base": "d53f19e2682e50ebbed2f5278c4958b7f6cdc257041c2d5106535be92e71fc4f",
+    "new": "d53f19e2682e50ebbed2f5278c4958b7f6cdc257041c2d5106535be92e71fc4f"
+  },
+  {
+    "name": "companyCoreRiskParts",
+    "same": true,
+    "base": "85dc3a08122a331aa3e29b58b1129bfb4c021ebdb2c773f2496563478b46c431",
+    "new": "85dc3a08122a331aa3e29b58b1129bfb4c021ebdb2c773f2496563478b46c431"
+  },
+  {
+    "name": "companyContextRisk",
+    "same": true,
+    "base": "91db8895ea80d980417c9d4b8a4d85dd5310ab4dedecf7362f9b445367636ff8",
+    "new": "91db8895ea80d980417c9d4b8a4d85dd5310ab4dedecf7362f9b445367636ff8"
+  },
+  {
+    "name": "loadPriorityForV44",
+    "same": true,
+    "base": "d551d3d9e2959de6a8804e99498018b0dda9f1dd281fc50d4b282a3507fbaecc",
+    "new": "d551d3d9e2959de6a8804e99498018b0dda9f1dd281fc50d4b282a3507fbaecc"
+  },
+  {
+    "name": "pumpLoadSchedulerV44",
+    "same": true,
+    "base": "f2c9401e8409661a9e9a4ccbc385979b5885e6f0372b4155b6851bea3afac46f",
+    "new": "f2c9401e8409661a9e9a4ccbc385979b5885e6f0372b4155b6851bea3afac46f"
+  },
+  {
+    "name": "queueLoadV44",
+    "same": true,
+    "base": "974b95b57e2b03f00a6c8cc957b3f66b9e65059fe0b4f682ba18aa9eea5b8585",
+    "new": "974b95b57e2b03f00a6c8cc957b3f66b9e65059fe0b4f682ba18aa9eea5b8585"
+  },
+  {
+    "name": "scheduleDeferredV44",
+    "same": true,
+    "base": "da7e24d5651e5c8dd35aa73c128a993ebf2bbdc51a34fbc9546113eb247850ee",
+    "new": "da7e24d5651e5c8dd35aa73c128a993ebf2bbdc51a34fbc9546113eb247850ee"
+  },
+  {
+    "name": "scheduleAroundPageV44",
+    "same": true,
+    "base": "adfc8ac3d7672ecd04bace63843efbcdf33238c320999922f7a972125b2996f1",
+    "new": "adfc8ac3d7672ecd04bace63843efbcdf33238c320999922f7a972125b2996f1"
+  },
+  {
+    "name": "refreshActiveV44",
+    "same": true,
+    "base": "69e2ead768bfd65f38f0d40cf8931c1feb5faa47a06b221e53d77a23da7c0eec",
+    "new": "69e2ead768bfd65f38f0d40cf8931c1feb5faa47a06b221e53d77a23da7c0eec"
+  },
+  {
+    "name": "sparklineSvg",
+    "same": true,
+    "base": "224d0c7b610551c0c559d95f56c5b87229e2b4ee8051ba49d398eb4119064c99",
+    "new": "224d0c7b610551c0c559d95f56c5b87229e2b4ee8051ba49d398eb4119064c99"
+  },
+  {
+    "name": "marketCardSparkPeriodV46",
+    "same": true,
+    "base": "d5df1ed44447511ddb3370bb68d36455dc96dfd05e3356d9da0b6d20fad19ee6",
+    "new": "d5df1ed44447511ddb3370bb68d36455dc96dfd05e3356d9da0b6d20fad19ee6"
+  }
+]

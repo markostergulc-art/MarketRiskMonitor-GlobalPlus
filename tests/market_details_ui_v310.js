@@ -1,0 +1,12 @@
+const fs=require('fs'),assert=require('assert');
+const app=fs.readFileSync('app.js','utf8'),mod=fs.readFileSync('app/src/main/assets/market_details_v310.js','utf8'),idx=fs.readFileSync('app/src/main/assets/index.html','utf8');
+assert(app.includes("MRMMarketDetailsV310.open(code)"),'openMarket integration missing');
+assert(app.includes("MRMMarketDetailsV310.deactivate"),'close integration missing');
+assert(app.includes('1M ${fmtPct(m.m1)}'),'1M metric missing');
+assert(app.includes('YTD</td><td>${fmtPct(m.ytd)}'),'YTD metric missing');
+assert(app.includes('1Y</td><td>${fmtPct(m.y1)}'),'1Y metric missing');
+assert(mod.includes('USED IN RISK / HEALTH MODEL'),'model/context split missing');
+assert(mod.includes('CONTEXT'),'context section missing');
+assert(!mod.includes('View Evidence'),'market detail must not add evidence navigation');
+assert(idx.includes('<script src="market_details_v310.js"></script>'),'asset link missing');
+console.log('market_details_ui_v310: PASS');

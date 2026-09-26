@@ -1,0 +1,37 @@
+{
+  "listing": {
+    "data": [
+      {"country":{"code":"DE","name":"Germany"},"eic":"21X-OP-DE","facilities":[{"name":"DE Store","type":"Storage Facility","eic":"21W-DE-1","country":"DE","company":"21X-OP-DE"}]},
+      {"country":{"code":"FR","name":"France"},"eic":"21X-OP-FR","facilities":[{"name":"FR Store","type":"Storage Facility","eic":"21W-FR-1","country":"FR","company":"21X-OP-FR"}]},
+      {"country":{"code":"GB","name":"United Kingdom"},"eic":"21X-OP-GB","facilities":[{"name":"GB Store","type":"Storage Facility","eic":"21W-GB-1","country":"GB","company":"21X-OP-GB"}]},
+      {"country":{"code":"UA","name":"Ukraine"},"eic":"21X-OP-UA","facilities":[{"name":"UA Store","type":"Storage Facility","eic":"21W-UA-1","country":"UA","company":"21X-OP-UA"}]}
+    ]
+  },
+  "normal": {
+    "data": [
+      {"gasDayStart":"2026-09-10","gasInStorage":137.0,"workingGasVolume":247.5,"full":55.35,"trend":0.22,"status":"C"}
+    ]
+  },
+  "missingFull": {
+    "data": [
+      {"gasDayStart":"2026-09-10","gasInStorage":50,"workingGasVolume":100,"full":null,"status":"C"}
+    ]
+  },
+  "missingCapacity": {
+    "data": [
+      {"gasDayStart":"2026-09-10","gasInStorage":50,"workingGasVolume":null,"full":50,"status":"C"}
+    ]
+  },
+  "over100": {
+    "data": [
+      {"gasDayStart":"2026-09-10","gasInStorage":101,"workingGasVolume":100,"full":101,"status":"C"}
+    ]
+  },
+  "duplicateDate": {
+    "data": [
+      {"gasDayStart":"2026-09-10","gasInStorage":49,"workingGasVolume":100,"full":49,"status":"E"},
+      {"gasDayStart":"2026-09-10","gasInStorage":50,"workingGasVolume":100,"full":50,"status":"C"},
+      {"gasDayStart":"2026-09-09","gasInStorage":48,"workingGasVolume":100,"full":48,"status":"C"}
+    ]
+  }
+}

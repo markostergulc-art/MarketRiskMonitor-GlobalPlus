@@ -1,0 +1,6 @@
+faostat,m49_code,country_name_en,item_code,item,year,yield_kg_ha,yield_kg_ha_flag,production_tonnes,production_tonnes_flag,area_harvested_ha,area_harvested_ha_flag
+98,191,Croatia,560,Grapes,2024,4927.800000,A,98260.000000,A,19940.000000,A
+98,191,Croatia,446,Green corn (maize),2024,,,901590.000000,A,,
+98,191,Croatia,526,Apricots,2024,2297.300000,A,850.000000,A,370.000000,A
+98,191,Croatia,552,Blueberries,2024,1976.200000,A,830.000000,A,420.000000,A
+98,191,Croatia,15,Wheat,2024,5882.100000,A,828200.000000,A,140800.000000,A

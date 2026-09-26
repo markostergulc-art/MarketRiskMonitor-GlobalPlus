@@ -1,0 +1,3 @@
+ObjectID,Publication Year,Publication Short Name and Volume,Country Report Title,Country (Short Form) or Locality,Level 1 (Commodity Group),Level 2 (Commodity),Level 3 (Type),Level 4 (Phase),Level 5 (Form),Descriptor,Commodity Unit,Commodity Unit Classification,Time Period,Timeframe,Data Type,Value,Unit,Value Notes,Other Notes,Data Source 1,Data Source 2,Currentness Date
+1,2024,MYBvIII,Chile,Chile,Copper,Copper,Mine,,,,gross weight,Gross weight,2024,Annual,Production,5500000,Metric tons,,,USGS,,2026-08-31
+2,2024,MYBvIII,China,China,Rare earths,Rare earths,Mine,,,,REO content,Elemental content,2024,Annual,Production,270000,Metric tons,,,USGS,,2026-08-31

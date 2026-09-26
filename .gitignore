@@ -6,25 +6,24 @@ local.properties
 *.aab
 *.dex
 
-# Release signing material - NEVER COMMIT
+# Release signing / secrets — never publish
 signing/
 *.p12
 *.pfx
 *.jks
 *.keystore
 keystore.properties
-
-# Secrets / local configuration
 .env
 .env.*
-*.secrets
 
-# IDE / OS
+# Generated build work
+manual_apk_build_*/
+__pycache__/
+*.pyc
 .idea/
 *.iml
 .DS_Store
 Thumbs.db
 
-# Python
-__pycache__/
-*.pyc
+# Published signed release APKs
+!bin/*.apk

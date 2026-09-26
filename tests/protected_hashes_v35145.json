@@ -1,0 +1,157 @@
+{
+  "globalRiskModel": {
+    "sha256": "1f85098673a8917c55fce92c711cefafeb101ac34e8f5fd85792fba95bf1d012",
+    "bytes": 2657,
+    "found": true
+  },
+  "globalContagion": {
+    "sha256": "94e2cdb32b3db02deffef77f461ca26db5acae966824456b9e43a6ca7a72810c",
+    "bytes": 445,
+    "found": true
+  },
+  "marketMetrics": {
+    "sha256": "67efe1e13b1e6d6d07148a48a752f46c87fce0a7f69dc68327de6c63c5c5dc64",
+    "bytes": 959,
+    "found": true
+  },
+  "trendRisk": {
+    "sha256": "37caff84f3021b09f26c72ee96546c5ac62aac6b2a1c95f8fd83283a4539ce17",
+    "bytes": 458,
+    "found": true
+  },
+  "corrMatrix": {
+    "sha256": "54e37baf28fc6f79a1a24c8311c7da97c730e4d9417db3be2f6d7adf6a31b8c8",
+    "bytes": 507,
+    "found": true
+  },
+  "correlationRegimeFromStats": {
+    "sha256": "90634b1748c3b0fc89a3a888cb70f85caf5770b073a916c0d3272dd0a7862f83",
+    "bytes": 1153,
+    "found": true
+  },
+  "correlationRegimeDiagnostic": {
+    "sha256": "c6dfe49bcde8efa7521e6f43226ec232084fd62d96be20d3c4367bc39c91f7c7",
+    "bytes": 1089,
+    "found": true
+  },
+  "buildMacroCycle": {
+    "sha256": "0f7a2900051cd77440556119f86a3eb50b918f166968f6b9367a5da845626ea9",
+    "bytes": 3021,
+    "found": true
+  },
+  "sp500HiddenWeakness": {
+    "sha256": "d53f19e2682e50ebbed2f5278c4958b7f6cdc257041c2d5106535be92e71fc4f",
+    "bytes": 6118,
+    "found": true
+  },
+  "companyCoreRiskParts": {
+    "sha256": "85dc3a08122a331aa3e29b58b1129bfb4c021ebdb2c773f2496563478b46c431",
+    "bytes": 637,
+    "found": true
+  },
+  "companyContextRisk": {
+    "sha256": "93393d3b3d757e71e0b59355328b6a1c6565131f31c749c1f14e14dfe7fd39ab",
+    "bytes": 608,
+    "found": true
+  },
+  "buildEuGasV33": {
+    "sha256": "330a787c43d0ea0c1b07ec081f351ddc91c65c96a6d549aaa47e42b973359ee2",
+    "bytes": 1482,
+    "found": true
+  },
+  "agsiApiJsonV33": {
+    "sha256": "3be6a8050decef4f17ab42c8e3b0f122dbab69e3bd15027c506137685ce95167",
+    "bytes": 1452,
+    "found": true
+  },
+  "parseAgsiPayloadV33": {
+    "sha256": "dc79aee0218a9dd8eafb8677fd4fa43055f68c110b2ece579c4be4727cb5291c",
+    "bytes": 1419,
+    "found": true
+  },
+  "renderThinProgressV38": {
+    "sha256": "699d6943db9038c30c1522804f3a0c7193db7d7a5a9cf93be7892960460fe49d",
+    "bytes": 448,
+    "found": true
+  },
+  "parseAgsiFacilityListingV37": {
+    "sha256": "7fa3009cbfe174713cebcad10f1a2eee753a51930ea129a9b50582c4011d9d37",
+    "bytes": 2921,
+    "found": true
+  },
+  "buildAgsiFacilitiesV37": {
+    "sha256": "6ecd6b8993a2c58e5e06ba1349f186d1c350652a817505ea8b8570194b81e642",
+    "bytes": 1309,
+    "found": true
+  },
+  "fiscalFreshnessV44": {
+    "sha256": "d757799f9192b595b4fd3a1346f0ae571c80af42b1a44c53605e3e3773d8644f",
+    "bytes": 1065,
+    "found": true
+  },
+  "fiscalPickReferenceV44": {
+    "sha256": "66c4e3c7b4356892900d053509f411300aee00df9af83fcc611e873de9fa2a77",
+    "bytes": 285,
+    "found": true
+  },
+  "fiscalBandV43": {
+    "sha256": "b6ecd94bd9605d738ae659e50e9111c7525d54c0df3688d208403a939d78a8f8",
+    "bytes": 562,
+    "found": true
+  },
+  "fiscalScoreRowsV43": {
+    "sha256": "e076592e1ae2b82983157c98e26c198ff9b31ac176451e1ad3297d7e76c9e13d",
+    "bytes": 1987,
+    "found": true
+  },
+  "loadPriorityForV44": {
+    "sha256": "d551d3d9e2959de6a8804e99498018b0dda9f1dd281fc50d4b282a3507fbaecc",
+    "bytes": 295,
+    "found": true
+  },
+  "pumpLoadSchedulerV44": {
+    "sha256": "f2c9401e8409661a9e9a4ccbc385979b5885e6f0372b4155b6851bea3afac46f",
+    "bytes": 1056,
+    "found": true
+  },
+  "queueLoadV44": {
+    "sha256": "974b95b57e2b03f00a6c8cc957b3f66b9e65059fe0b4f682ba18aa9eea5b8585",
+    "bytes": 866,
+    "found": true
+  },
+  "scheduleDeferredV44": {
+    "sha256": "da7e24d5651e5c8dd35aa73c128a993ebf2bbdc51a34fbc9546113eb247850ee",
+    "bytes": 344,
+    "found": true
+  },
+  "scheduleAroundPageV44": {
+    "sha256": "adfc8ac3d7672ecd04bace63843efbcdf33238c320999922f7a972125b2996f1",
+    "bytes": 310,
+    "found": true
+  },
+  "refreshActiveV44": {
+    "sha256": "69e2ead768bfd65f38f0d40cf8931c1feb5faa47a06b221e53d77a23da7c0eec",
+    "bytes": 204,
+    "found": true
+  },
+  "updateLoadStatusV44": {
+    "sha256": "3eb0711ccf9e37e21e67099104397ce4e4a0268fe5b6be1fe8d958d026cd386d",
+    "bytes": 2151,
+    "found": true
+  },
+  "loadUiNetworkV45": {
+    "sha256": "2997ba6388a7219695a2e2790bdd4e04bb2eb1956c8e1149b9405f0c2138226d",
+    "bytes": 437,
+    "found": true
+  },
+  "sparklineSvg": {
+    "sha256": "224d0c7b610551c0c559d95f56c5b87229e2b4ee8051ba49d398eb4119064c99",
+    "bytes": 611,
+    "found": true
+  },
+  "fetchWithTimeout": {
+    "sha256": "efd1a5b8a872684682ff9a0899b4c760ea1447e1662a6f6ce55eef46b3a7566d",
+    "bytes": 1454,
+    "found": true
+  }
+}

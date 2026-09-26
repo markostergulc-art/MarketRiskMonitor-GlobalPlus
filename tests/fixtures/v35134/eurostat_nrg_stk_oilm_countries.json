@@ -1,0 +1,306 @@
+{
+  "version": "2.0",
+  "class": "dataset",
+  "label": "sanitized Eurostat fixture",
+  "id": [
+    "freq",
+    "stk_flow",
+    "siec",
+    "unit",
+    "geo",
+    "time"
+  ],
+  "size": [
+    1,
+    2,
+    6,
+    1,
+    4,
+    2
+  ],
+  "dimension": {
+    "freq": {
+      "label": "freq",
+      "category": {
+        "index": {
+          "M": 0
+        },
+        "label": {
+          "M": "Monthly"
+        }
+      }
+    },
+    "stk_flow": {
+      "label": "stk_flow",
+      "category": {
+        "index": {
+          "STKCL_EU_EMERG": 0,
+          "STKCL_COM": 1
+        },
+        "label": {
+          "STKCL_EU_EMERG": "Closing stock - EU emergency",
+          "STKCL_COM": "Closing stock - commercial"
+        }
+      }
+    },
+    "siec": {
+      "label": "siec",
+      "category": {
+        "index": {
+          "O4000": 0,
+          "O4100_TOT": 1,
+          "O4651": 2,
+          "O4671": 3,
+          "O4661": 4,
+          "O4680": 5
+        },
+        "label": {
+          "O4000": "Oil and petroleum products",
+          "O4100_TOT": "Crude oil",
+          "O4651": "Motor gasoline",
+          "O4671": "Gas oil and diesel oil",
+          "O4661": "Kerosene-type jet fuel",
+          "O4680": "Fuel oil"
+        }
+      }
+    },
+    "unit": {
+      "label": "unit",
+      "category": {
+        "index": {
+          "THS_T": 0
+        },
+        "label": {
+          "THS_T": "Thousand tonnes"
+        }
+      }
+    },
+    "geo": {
+      "label": "geo",
+      "category": {
+        "index": {
+          "AT": 0,
+          "DE": 1,
+          "FR": 2,
+          "AL": 3
+        },
+        "label": {
+          "AT": "Austria",
+          "DE": "Germany",
+          "FR": "France",
+          "AL": "Albania"
+        }
+      }
+    },
+    "time": {
+      "label": "time",
+      "category": {
+        "index": {
+          "2026-05": 0,
+          "2026-06": 1
+        },
+        "label": {
+          "2026-05": "2026-05",
+          "2026-06": "2026-06"
+        }
+      }
+    }
+  },
+  "value": [
+    2450,
+    2500,
+    22950,
+    23000,
+    16950,
+    null,
+    50,
+    100,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    1450,
+    1500,
+    9950,
+    10000,
+    8450,
+    null,
+    150,
+    200,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "updated": "2026-09-13T10:00:00Z",
+  "status": [
+    null,
+    "p",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    "p",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}

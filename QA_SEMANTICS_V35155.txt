@@ -1,0 +1,98 @@
+### tests/phase5_factor_architecture_v35153.js
+PASS - function present: factorRowsV53
+PASS - function present: factorRowsMatchV53
+PASS - function present: factorSubRowsV53
+PASS - function present: factorSubValueV53
+PASS - function present: factorRecordV53
+PASS - function present: factorContributionV53
+PASS - function present: legacyGlobalRiskV52
+PASS - function present: globalFactorArchitectureV53
+PASS - function present: globalRiskModel
+PASS - new factor weights sum to 100
+PASS - credit/funding/liquidity broad weight budget preserved
+PASS - macro broad weight budget preserved
+PASS - other broad weight budgets preserved
+PASS - factor architecture version exposed
+PASS - deterministic new GLOBAL fixture score
+PASS - legacy v3.5.1.52 fixture reproduced
+PASS - old/new difference exported
+PASS - weight-preserving split explicitly declared
+PASS - ten production factor families
+PASS - structural financial vulnerability diagnostic-only in Phase 5
+PASS - fiscal structural factor not prematurely production-weighted
+PASS - factor contributions reconcile to rounded GLOBAL score
+PASS - credit grouped into five bounded subfamilies
+PASS - volatility raw signals grouped into four subfamilies
+PASS - four option signals collapse into one options subfactor
+PASS - duplicate identical correlated rows do not increase volatility factor weight
+PASS - insufficient factor families => LIMITED DATA
+PASS - missing credit remains missing, not zero
+PASS - structural diagnostic is auditable
+RESULT - 29/29 Phase 5 factor architecture checks PASS
+### tests/phase4_semantics_v35152.js
+PASS - function present: earlyClassMetaV52
+PASS - function present: earlySignalClassificationV52
+PASS - function present: isEarlyCompositeV52
+PASS - function present: annotateEarlySemanticsV52
+PASS - function present: earlyClassScoreV52
+PASS - function present: earlyWarningLayersV52
+PASS - Sahm is late confirmation
+PASS - Sahm macro row is late confirmation
+PASS - 10Y-2Y is leading
+PASS - 10Y-3M is leading
+PASS - OECD CLI is leading
+PASS - SLOOS lending standards are leading
+PASS - initial claims are leading
+PASS - building permits are leading
+PASS - VIX is current stress
+PASS - funding spread is current stress
+PASS - NFCI is current stress
+PASS - breadth is early confirmation
+PASS - HY OAS is early confirmation
+PASS - payroll/hours is early confirmation
+PASS - loan delinquency is late confirmation
+PASS - crowding is structural
+PASS - recession composite is not treated as leading
+PASS - inflation composite is current stress
+PASS - late Sahm cannot inflate Leading Warning
+PASS - Current Stress independent
+PASS - Confirmation uses 65/35 early/late category weights
+PASS - Structural layer independent
+PASS - no single Early Warning total
+PASS - composite excluded when raw class signal exists
+PASS - composite exclusion is auditable
+PASS - confirmation weights explicit in source
+PASS - single aggregate explicitly disabled
+RESULT - 33/33 Phase 4 semantic checks PASS
+### tests/freshness_semantics_v35149.js
+PASS NFCI current latest release
+PASS NFCI expected next release
+PASS NFCI Risk same semantics
+PASS NFCI Credit same semantics
+PASS STLFSI4 current latest release
+PASS Bank deposits current until scheduled release
+PASS SLOOS old but latest provider release
+PASS DRBLACBS quarterly old but current release
+PASS DRSREACBS quarterly old but current release
+PASS DRCRELEXFACBS quarterly old but current release
+PASS DRCRELEXFOBS quarterly old but current release
+PASS Known weekly release one day overdue is LATE
+PASS Known newer expected release unresolved becomes STALE
+PASS Missing observation is UNKNOWN
+PASS Event release schedule stays UNKNOWN
+PASS FRED quarterly mapping
+PASS FRED weekly mapping
+PASS No fabricated schedule for quarterly
+PASS Series id parsed from FRED URL
+RESULT 19/19 PASS
+### tests/confidence_model_v35151.js
+PASS - official provider class A
+PASS - market aggregator class B
+PASS - secondary provider class C
+PASS - unknown/unofficial class D
+PASS - stale fallback lowers source quality without deleting data
+PASS - complete coherent country => HIGH confidence
+PASS - Phase-2 ineligible country => LIMITED confidence
+PASS - confidence does not mutate risk inputs
+PASS - eligible country confidence remains separate categorical label
+PASS - factor disagreement reduces confidence component

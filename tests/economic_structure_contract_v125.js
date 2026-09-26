@@ -1,0 +1,8 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const app=fs.readFileSync('app.js','utf8');
+const src=fs.readFileSync('app/src/main/assets/economic_structure_v125.js','utf8');
+const mm=app.match(/const MARKET_CONFIG=\[([\s\S]*?)\n\];/);assert(mm);const MARKET_CONFIG=vm.runInNewContext('['+mm[1]+']');
+const em=app.match(/const EXTENDED_COUNTRY_CONFIG=\[([\s\S]*?)\];\nfunction activeMarketConfig/);assert(em);const EXTENDED_COUNTRY_CONFIG=vm.runInNewContext('['+em[1]+']');
+let writes={},network=0;const ctx={window:{},MARKET_CONFIG,EXTENDED_COUNTRY_CONFIG,activeMarketConfig:()=>MARKET_CONFIG.slice(),localStorage:{getItem:k=>writes[k]||null,setItem:(k,v)=>writes[k]=v},fetch:()=>{network++;throw Error('must not fetch at load')},console,Date};ctx.window.window=ctx.window;vm.createContext(ctx);vm.runInContext(src,ctx);const api=ctx.window.MRMEconomicStructure;assert(api);assert.strictEqual(network,0,'zero requests on module load');assert.strictEqual(MARKET_CONFIG.length,36);assert.strictEqual(EXTENDED_COUNTRY_CONFIG.length,50);assert.strictEqual(api.universe().length,86);assert.strictEqual(api.allContracts().length,86);for(const c of api.allContracts()){assert(c.contextOnly===true);for(const d of ['broadStructure','trade','minerals','agriculture','tourism'])assert(c[d]&&c[d].status==='N/A')}
+let o=api.observation({provider:'X',value:null,unit:'t',period:'2024'});assert.strictEqual(o.value,null,'null must stay null');api.writeCache('DE','trade',{retrievedAt:new Date().toISOString(),x:1});assert(api.readCache('DE','trade'));
+console.log('economic_structure contract: PASS · 86/86 · zero startup requests');

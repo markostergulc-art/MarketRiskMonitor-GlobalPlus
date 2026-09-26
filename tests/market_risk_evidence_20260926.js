@@ -1,0 +1,5 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const src=fs.readFileSync('app/src/main/assets/market_details_v310.js','utf8');
+const countries=[{code:'HR',macroData:{},subscores:{market:40,macro:50,credit:60,liquidity:30,valuation:20,technical:35,systemic:45},risk:42}];
+const MARKET_CONFIG=[{code:'HR',iso:'HRV',name:'Croatia',region:'Europe',index:'CROBEX',symbol:'CBX'}];
+const ctx={window:{appState:{countries,equity:{byCode:{HR:{score:33,coverage:88}}}}},appState:{countries,equity:{byCode:{HR:{score:33,coverage:88}}}},activeMarketConfig:()=>MARKET_CONFIG,getWeights:()=>({market:25,macro:20,credit:15,liquidity:15,valuation:10,technical:10,systemic:5}),localStorage:{getItem:()=>null,setItem:()=>{}},console};ctx.window.window=ctx.window;vm.createContext(ctx);vm.runInContext(src,ctx);let e=ctx.window.MRMMarketDetailsV310.riskHealthEvidenceV124('HR');assert.strictEqual(e.rows.length,7);let sum=e.rows.reduce((a,r)=>a+r.contribution,0);assert(Math.abs(sum-e.reconstructed)<1e-9);assert(e.rows.every(r=>Number.isFinite(r.normalizedWeight)&&Number.isFinite(r.contribution)));console.log('market_risk_evidence_20260926: PASS');
