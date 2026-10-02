@@ -19,7 +19,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '8.11.1'
       - name: Find Android sdkmanager
         id: androidsdk
         run: |
@@ -43,6 +43,11 @@ jobs:
           base64 -d /tmp/dailyosint_source.b64 > /tmp/daily-osint.zip
           echo "2204ca57213bd0c458faba460d3ead0bdaa558f8cf78ab14081182774134543a  /tmp/daily-osint.zip" | sha256sum -c -
           unzip -q /tmp/daily-osint.zip -d /tmp/daily-osint
+      - name: Apply confirmed build compatibility fix
+        working-directory: /tmp/daily-osint/DailyOSINTIntelligence
+        run: |
+          sed -i 's/com.android.application") version "8.7.3"/com.android.application") version "8.9.1"/' build.gradle.kts
+          grep 'com.android.application' build.gradle.kts
       - name: Unit tests and debug APK
         working-directory: /tmp/daily-osint/DailyOSINTIntelligence
         run: |
