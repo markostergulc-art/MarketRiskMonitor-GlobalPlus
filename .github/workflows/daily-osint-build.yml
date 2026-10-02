@@ -20,12 +20,16 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-      - name: Install Android SDK 36
-        run: yes | sdkmanager --licenses >/dev/null || true
-      - name: Install platform and build tools
-        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Verify Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
+          which sdkmanager
+          sdkmanager --version
+      - name: Accept licenses and install SDK 36
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
       - name: Restore source archive
         run: |
           base64 -d daily-osint-build/source.zip.b64 > /tmp/daily-osint.zip
