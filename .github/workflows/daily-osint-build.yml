@@ -24,12 +24,11 @@ jobs:
         run: |
           echo "ANDROID_HOME=$ANDROID_HOME"
           echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
-          which sdkmanager
-          sdkmanager --version
+          /usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager --version
       - name: Accept licenses and install SDK 36
         run: |
-          yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+          yes | /usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager --licenses >/dev/null || true
+          /usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
       - name: Restore source archive
         run: |
           base64 -d daily-osint-build/source.zip.b64 > /tmp/daily-osint.zip
