@@ -27,7 +27,6 @@ jobs:
           SDKMANAGER="$(find "$ANDROID_HOME" -type f -name sdkmanager -print -quit)"
           if [ -z "$SDKMANAGER" ]; then
             echo "sdkmanager not found under $ANDROID_HOME"
-            find "$ANDROID_HOME" -maxdepth 4 -type f | head -200
             exit 1
           fi
           echo "sdkmanager=$SDKMANAGER" >> "$GITHUB_OUTPUT"
@@ -39,7 +38,10 @@ jobs:
           "$SDKMANAGER" "platform-tools" "platforms;android-36" "build-tools;36.0.0"
       - name: Restore source archive
         run: |
-          base64 -d daily-osint-build/source.zip.b64 > /tmp/daily-osint.zip
+          cat daily-osint-build/chunk_00 daily-osint-build/chunk_01 daily-osint-build/chunk_02 daily-osint-build/chunk_03 daily-osint-build/chunk_04 > /tmp/dailyosint_source.b64
+          test "$(wc -c < /tmp/dailyosint_source.b64)" -eq 26188
+          base64 -d /tmp/dailyosint_source.b64 > /tmp/daily-osint.zip
+          echo "2204ca57213bd0c458faba460d3ead0bdaa558f8cf78ab14081182774134543a  /tmp/daily-osint.zip" | sha256sum -c -
           unzip -q /tmp/daily-osint.zip -d /tmp/daily-osint
       - name: Unit tests and debug APK
         working-directory: /tmp/daily-osint/DailyOSINTIntelligence
