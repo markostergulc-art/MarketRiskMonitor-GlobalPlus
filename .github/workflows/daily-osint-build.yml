@@ -1,0 +1,48 @@
+name: Build Daily OSINT APK
+on:
+  push:
+    branches:
+      - daily-osint-apk-build
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Install Android SDK 36
+        run: yes | sdkmanager --licenses >/dev/null || true
+      - name: Install platform and build tools
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0"
+      - name: Restore source archive
+        run: |
+          base64 -d daily-osint-build/source.zip.b64 > /tmp/daily-osint.zip
+          unzip -q /tmp/daily-osint.zip -d /tmp/daily-osint
+      - name: Unit tests and debug APK
+        working-directory: /tmp/daily-osint/DailyOSINTIntelligence
+        run: |
+          gradle --no-daemon test
+          gradle --no-daemon assembleDebug
+      - name: Prepare artifact
+        run: |
+          mkdir -p out
+          cp /tmp/daily-osint/DailyOSINTIntelligence/app/build/outputs/apk/debug/app-debug.apk out/DailyOSINTIntelligence_v1.0.0_debug.apk
+          sha256sum out/DailyOSINTIntelligence_v1.0.0_debug.apk > out/SHA256.txt
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DailyOSINTIntelligence-v1.0.0-debug
+          path: out/
+          if-no-files-found: error
