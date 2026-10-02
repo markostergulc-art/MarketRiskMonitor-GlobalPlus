@@ -24,7 +24,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '8.11.1'
 
       - name: Reconstruct source archive
         shell: bash
@@ -32,6 +32,7 @@ jobs:
           cat osint-build/source.b64.0 osint-build/source.b64.1 osint-build/source.b64.2 osint-build/source.b64.3 osint-build/source.b64.4 | base64 -d > osint-source.zip
           echo "2204ca57213bd0c458faba460d3ead0bdaa558f8cf78ab14081182774134543a  osint-source.zip" | sha256sum -c -
           unzip -q osint-source.zip
+          sed -i 's/version "8.7.3"/version "8.9.1"/' DailyOSINTIntelligence/build.gradle.kts
 
       - name: Install Android SDK 36
         shell: bash
