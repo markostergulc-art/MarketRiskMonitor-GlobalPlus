@@ -63,7 +63,7 @@ jobs:
               )
           p.write_text(s)
           PY
-          grep 'com.android.application' build.gradle.kts
+          grep -E 'com.android.application|org.jetbrains.kotlin.android|org.jetbrains.kotlin.plugin.compose|com.google.devtools.ksp' build.gradle.kts
           grep -A4 'compileOptions' app/build.gradle.kts
       - name: Unit tests and debug APK
         working-directory: /tmp/daily-osint/DailyOSINTIntelligence
