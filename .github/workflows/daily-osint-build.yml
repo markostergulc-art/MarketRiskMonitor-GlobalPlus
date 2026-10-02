@@ -46,11 +46,29 @@ jobs:
       - name: Apply confirmed build compatibility fixes
         working-directory: /tmp/daily-osint/DailyOSINTIntelligence
         run: |
-          sed -i 's/com.android.application") version "8.7.3"/com.android.application") version "8.9.1"/' build.gradle.kts
           python3 - <<'PY'
           from pathlib import Path
-          p = Path("app/build.gradle.kts")
-          s = p.read_text()
+
+          root = Path("build.gradle.kts")
+          s = root.read_text()
+          replacements = {
+              'id("com.android.application") version "8.7.3" apply false':
+                  'id("com.android.application") version "8.9.1" apply false',
+              'id("org.jetbrains.kotlin.android") version "2.0.21" apply false':
+                  'id("org.jetbrains.kotlin.android") version "2.2.0" apply false',
+              'id("org.jetbrains.kotlin.plugin.compose") version "2.0.21" apply false':
+                  'id("org.jetbrains.kotlin.plugin.compose") version "2.2.0" apply false',
+              'id("com.google.devtools.ksp") version "2.0.21-1.0.28" apply false':
+                  'id("com.google.devtools.ksp") version "2.2.0-2.0.2" apply false',
+          }
+          for old, new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f"Expected build line not found: {old}")
+              s = s.replace(old, new)
+          root.write_text(s)
+
+          app = Path("app/build.gradle.kts")
+          s = app.read_text()
           if "sourceCompatibility = JavaVersion.VERSION_17" not in s:
               s = s.replace(
                   "android {",
@@ -61,9 +79,13 @@ jobs:
               }""",
                   1,
               )
-          p.write_text(s)
+          app.write_text(s)
           PY
+
           grep -E 'com.android.application|org.jetbrains.kotlin.android|org.jetbrains.kotlin.plugin.compose|com.google.devtools.ksp' build.gradle.kts
+          grep -q 'org.jetbrains.kotlin.android") version "2.2.0"' build.gradle.kts
+          grep -q 'org.jetbrains.kotlin.plugin.compose") version "2.2.0"' build.gradle.kts
+          grep -q 'com.google.devtools.ksp") version "2.2.0-2.0.2"' build.gradle.kts
           grep -A4 'compileOptions' app/build.gradle.kts
       - name: Unit tests and debug APK
         working-directory: /tmp/daily-osint/DailyOSINTIntelligence
