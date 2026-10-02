@@ -1,0 +1,61 @@
+name: OSINT APK Build
+
+on:
+  push:
+    branches:
+      - osint-apk-build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Reconstruct source archive
+        shell: bash
+        run: |
+          cat osint-build/source.b64.0 osint-build/source.b64.1 osint-build/source.b64.2 osint-build/source.b64.3 osint-build/source.b64.4 | base64 -d > osint-source.zip
+          echo "2204ca57213bd0c458faba460d3ead0bdaa558f8cf78ab14081182774134543a  osint-source.zip" | sha256sum -c -
+          unzip -q osint-source.zip
+
+      - name: Install Android SDK 36
+        shell: bash
+        run: |
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager "platforms;android-36" "build-tools;35.0.0"
+
+      - name: Unit tests and APK build
+        working-directory: DailyOSINTIntelligence
+        run: |
+          gradle --version
+          gradle testDebugUnitTest assembleDebug --stacktrace
+
+      - name: Verify APK
+        shell: bash
+        run: |
+          APK="DailyOSINTIntelligence/app/build/outputs/apk/debug/app-debug.apk"
+          test -s "$APK"
+          ls -lh "$APK"
+          sha256sum "$APK"
+          "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose "$APK"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DailyOSINTIntelligence-v1.0.0-debug
+          path: DailyOSINTIntelligence/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 7
